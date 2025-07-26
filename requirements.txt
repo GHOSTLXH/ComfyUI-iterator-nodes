@@ -1,4 +1,0 @@
-glob
-torch
-numpy
-PTL
