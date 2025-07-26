@@ -1,5 +1,5 @@
 [project]
-name = "ComfyUI-iterator-nodes"
+name = "iterator-nodes"
 description = "These are ComfyUI nodes that iterate through a specified folder, passing the image files and their corresponding prompts one by one to the next nodes."
 version = "1.0.0"
 license = {file = "LICENSE"}
