@@ -1,0 +1,14 @@
+[project]
+name = "ComfyUI-iterator-nodes"
+description = "These are ComfyUI nodes that iterate through a specified folder, passing the image files and their corresponding prompts one by one to the next nodes."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/GHOSTLXH/ComfyUI-iterator-nodes"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "ghostlxh"
+DisplayName = "ComfyUI-iterator-nodes"
+Icon = ""
