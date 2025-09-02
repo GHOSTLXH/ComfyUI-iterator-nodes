@@ -1,15 +1,24 @@
 # ComfyUI-iterator-nodes
-这是几个通过遍历特定文件夹来向后续节点逐个输送文件夹中图像文件和对应prompt的ComfyUI节点 
+这是几个通过遍历特定文件夹来向后续节点逐个输送文件夹中图像、提示词（prompt）、视频文件（拆成图片组）、整个视频文件与逐个将视频文件通过API（openAI格式）上传给对应的大模型的ComfyUI节点。 
 
-These are ComfyUI nodes that iterate through a specified folder, passing the image files and their corresponding prompts one by one to the next nodes.
+This is a set of ComfyUI nodes that traverse specific folders to sequentially deliver images, prompts, video files (split into image sequences), entire video files, and individually upload video files via an API (OpenAI format) to corresponding LLM for subsequent nodes.
 
-通过开启ComfyUI队列执行模式中的执行（变更时）模式来实现按特定顺序将文件夹中的图像\txt文件中的内容（常为prompt）一起传输给下一个节点，直到该文件夹内所有图像\txt文件均被传输后自动报错停止。此时将队列执行模式改回默认模式即可。
+注意：逐个将视频文件通过API（openAI格式）上传给对应的大模型的ComfyUI节点（openai_file_iterator）后续需要搭配诸如spawner1145的aichat节点（https://github.com/spawner1145/comfyui-aichat，在此感谢他制作的开源节点）等llm对话节点进行使用，且由于当前不同模型API提供商的“兼容”OpenAI格式的API对文件的上传与上传后的应答等方面的要求均不相同，因此可能会出现各种各样的问题，强烈建议在上传文件前仔细查看API提供商的API文档并根据其格式对节点程序文件本身做对应的修改（如果你实在要用这个API提供商的API的话...）
 
-By enabling the 'Execute (on change)' mode in ComfyUI's queue execution settings, the system sequentially transfers images from a folder along with their corresponding text file contents (typically prompts) to the next node in a specified order. Once all image/text files in the folder have been processed, it automatically stops and throws an error. At this point, simply switch the queue execution mode back to the default setting.
+Note: The ComfyUI node (openai_file_iterator) that sequentially uploads video files via an API (OpenAI format) to corresponding large models needs to be used in conjunction with LLM dialogue nodes such as spawner1145's aichat node (https://github.com/spawner1145/comfyui-aichat—special and thanks to him for creating this open-source node). Additionally, since different API providers currently have varying requirements for file uploads and responses under their "compatible" OpenAI-style APIs, various issues may arise. It is strongly recommended to carefully review the API provider’s documentation and modify the node program file accordingly based on their specific format (if you have to use that particular API provider...).
 
-其中ImageFileIterator节点和TextFileIterator节点分别为按顺序逐个传输特定文件夹内的图像和txt文件的节点，而FilenameComparator节点则在同时使用图像和txt传输节点时使用，其作用是检验两个节点同时传输的文件名是否一致，若不一致会报错停止队列执行以防造成更大的错误。
 
-The ImageFileIterator node and TextFileIterator node are designed to sequentially transmit image files and text (.txt) files from a specified folder, one by one. When both image and text transmission nodes are used simultaneously, the FilenameComparator node comes into play—it checks whether the filenames being transmitted by both nodes match. If they don't, it triggers an error and halts queue execution to prevent further issues.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
