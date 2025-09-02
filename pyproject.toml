@@ -1,7 +1,7 @@
 [project]
 name = "iterator-nodes"
-description = "These are ComfyUI nodes that iterate through a specified folder, passing the image files and their corresponding prompts one by one to the next nodes ."
-version = "1.0.3"
+description = "This is a set of ComfyUI nodes that traverse specific folders to sequentially deliver images, prompts, video files (split into image sequences), entire video files, and individually upload video files via an API (OpenAI format) to corresponding LLM for subsequent nodes."
+version = "1.0.4"
 license = {file = "LICENSE"}
 
 [project.urls]
