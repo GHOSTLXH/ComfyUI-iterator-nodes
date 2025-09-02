@@ -45,19 +45,23 @@ This node is used to compare whether the output filenames (`filename`) from two 
 
 This node is designed to sequentially read video files from a specified folder (the absolute path is provided via the `file_path` input, either directly or through other string nodes) in alphabetical order, and split each video into a series of image frames. After all video files in the folder have been processed and output, the node will actively throw an error to stop the queue, indicating that the task has been completed.
 
+（5）逐个读取视频对象（video_object_iterator node）
 
+![video_object_iterator node](picture/wechat_2025-09-02_212523_857.png)
 
+这个节点用于逐个从特定文件夹中（文件夹绝对路径在file_path中输入或通过其他字符串节点导入到file_path）按命名顺序逐个读取并输出完整的视频文件（mp4格式）。在该文件夹内所有视频文件均被输出后节点将会主动报错停止队列来提示任务已经完成。
 
+This node is used to sequentially read and output complete video files (in MP4 format) from a specified folder (the absolute folder path is input in `file_path` or imported via other string nodes into `file_path`) in alphabetical order. After all video files in the folder have been output, the node will actively throw an error to stop the queue, indicating that the task has been completed.
 
+（6）逐个上传文件到OpenAI（openai_file_iterator node）
 
+![openai_file_iterator node](picture/wechat_2025-09-02_212531_585.png)
 
+这个节点用于逐个从特定文件夹中（文件夹绝对路径在file_path中输入或通过其他字符串节点导入到file_path）按命名顺序逐个读取并输出完整的视频文件（mp4格式）给以openAI格式编写的llm API对话节点。在该文件夹内所有视频文件均被输出后节点将会主动报错停止队列来提示任务已经完成。（由于当前不同模型API提供商的“兼容”OpenAI格式的API对文件的上传与上传后的应答等方面的要求均不相同，因此可能会出现各种各样的问题，强烈建议在上传文件前仔细查看API提供商的API文档并根据其格式对节点程序文件本身做对应的修改（如果你实在要用这个API提供商的API的话...））
 
+This node is used to sequentially read and output complete video files (in MP4 format) from a specified folder (the absolute folder path is input in `file_path` or imported via other string nodes into `file_path`) in alphabetical order, and deliver them to an LLM API dialogue node designed in the OpenAI format. After all video files in the folder have been output, the node will actively throw an error to stop the queue, indicating that the task has been completed. 
 
-
-
-
-
-
+(Note: Since different API providers currently have varying requirements for file uploads and responses under their "compatible" OpenAI-style APIs, various issues may arise. It is strongly recommended to carefully review the API provider’s documentation and modify the node program file accordingly based on their specific format—if you have to use that particular API provider...)
 
 
 
