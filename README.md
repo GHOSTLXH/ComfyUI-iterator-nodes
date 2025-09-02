@@ -7,6 +7,65 @@ This is a set of ComfyUI nodes that traverse specific folders to sequentially de
 
 Note: The ComfyUI node (openai_file_iterator) that sequentially uploads video files via an API (OpenAI format) to corresponding large models needs to be used in conjunction with LLM dialogue nodes such as spawner1145's aichat node (https://github.com/spawner1145/comfyui-aichat—special and thanks to him for creating this open-source node). Additionally, since different API providers currently have varying requirements for file uploads and responses under their "compatible" OpenAI-style APIs, various issues may arise. It is strongly recommended to carefully review the API provider’s documentation and modify the node program file accordingly based on their specific format (if you have to use that particular API provider...).
 
+节点功能与示意工作流：（nodes function and workflow examples）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
