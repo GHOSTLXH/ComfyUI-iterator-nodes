@@ -71,11 +71,11 @@ After all video files in the folder have been processed, the node will actively 
 
 2、视频抽帧打标组合示例工作流（nodes function and Example Workflow for Video Frame Extraction and Tagging）
 
+![Example Workflow](picture/wechat_2025-09-03_150431_620.png)
 
+如上图所示，我们可以尝试将迭代视频并按间隔提取多帧节点（video_frames_by_interval_iterator node）提取出的多张关键帧图片通过 aichat节点包中的 OpenAI内容块连接器（OpenAIContentConnector）节点进行排序与整合（理论上OpenAI内容块连接器（OpenAIContentConnector）节点也可以无限叠加，只要API提供商允许的话）最后再输给aichat等llm对话节点即可。
 
-
-
-
+As shown in the figure above, we can attempt to sort and integrate the multiple keyframe images extracted by the **Video Frame Extraction Iterator Node (video_frames_by_interval_iterator node)** using the **OpenAI Content Connector Node (OpenAIContentConnector)** from the aichat node package. The sorted and integrated content can then be passed to LLM conversation nodes such as aichat. (Theoretically, the OpenAI Content Connector Node can be stacked infinitely, provided the API provider allows it.)
 
 
 
